@@ -8,5 +8,6 @@
   <string name="input_prefill"></string>
   <string name="contentDescAdd">Add a Stock</string>
   <string name="stockAlrSaved">This stock is already saved!</string>
+  <string name="invalid_symbol">Invalid stock symbol!</string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
 </resources>
