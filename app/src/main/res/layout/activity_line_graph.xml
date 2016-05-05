@@ -11,6 +11,7 @@
         app:egUseCubic="true"
         app:egUseOverlapFill="true"
         app:egIndicatorLineColor="#FE6DA8"
+        app:egIndicatorTextColor="@android:color/white"
         app:egLegendHeight="40dp"
         android:visibility="gone"/>
 
