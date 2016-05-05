@@ -7,8 +7,11 @@
   <string name="content_test">Search for a Stock Symbol</string>
   <string name="input_hint" translatable="false">FB</string>
   <string name="input_prefill"></string>
+  <string name="loading">Loading&#8230;</string>
   <string name="contentDescAdd">Add a Stock</string>
   <string name="stockAlrSaved">This stock is already saved!</string>
   <string name="invalid_symbol">Invalid stock symbol!</string>
+    <string name="error">Error</string>
+  <string name="loading_failed">Oops! Something went wrong. Check your internet connection and try again&#8230;</string>
   <string name="network_toast">Uh-oh! This app requires an internet connection</string>
 </resources>
