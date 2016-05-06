@@ -6,7 +6,7 @@
     <string name="symbol_search">Symbol Search</string>
     <string name="content_test">Search for a Stock Symbol</string>
     <string name="input_hint" translatable="false">FB</string>
-    <string name="widget_title">Your Stocks </string>
+    <string name="widget_title">My Stocks </string>
     <string name="input_prefill"></string>
     <string name="loading">Loading</string>
     <string name="contentDescAdd">Add a Stock</string>
