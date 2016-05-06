@@ -34,6 +34,7 @@ public class QuoteWidgetProvider extends AppWidgetProvider {
         sWorkerThread.start();
         sWorkerQueue = new Handler(sWorkerThread.getLooper());
     }
+
     @Override
     public void onEnabled(Context context) {
         final ContentResolver r = context.getContentResolver();
@@ -52,7 +53,7 @@ public class QuoteWidgetProvider extends AppWidgetProvider {
             final String symbol = intent.getStringExtra("symbol");
 
             Intent i = new Intent(ctx, DetailActivity.class);
-            i.setFlags (Intent.FLAG_ACTIVITY_NEW_TASK);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             i.putExtra("symbol", symbol);
             ctx.startActivity(i);
         }
@@ -90,24 +91,25 @@ public class QuoteWidgetProvider extends AppWidgetProvider {
     }
 }
 
-    /**
-     * @author Prateesh Goswami
-     * @version 1.0
-     * @date 5/5/2016
-     */
-    class QuoteDataProviderObserver extends ContentObserver {
-        private AppWidgetManager mAppWidgetManager;
-        private ComponentName mComponentName;
+/**
+ * @author Prateesh Goswami
+ * @version 1.0
+ * @date 5/5/2016
+ */
+class QuoteDataProviderObserver extends ContentObserver {
+    private AppWidgetManager mAppWidgetManager;
+    private ComponentName mComponentName;
 
-        QuoteDataProviderObserver(AppWidgetManager mgr, ComponentName cn, Handler h) {
-            super(h);
-            mAppWidgetManager = mgr;
-            mComponentName = cn;
-        }
-        @Override
-        public void onChange(boolean selfChange) {
-
-            mAppWidgetManager.notifyAppWidgetViewDataChanged(
-                    mAppWidgetManager.getAppWidgetIds(mComponentName), R.id.widget_list);
-        }
+    QuoteDataProviderObserver(AppWidgetManager mgr, ComponentName cn, Handler h) {
+        super(h);
+        mAppWidgetManager = mgr;
+        mComponentName = cn;
     }
+
+    @Override
+    public void onChange(boolean selfChange) {
+
+        mAppWidgetManager.notifyAppWidgetViewDataChanged(
+                mAppWidgetManager.getAppWidgetIds(mComponentName), R.id.widget_list);
+    }
+}

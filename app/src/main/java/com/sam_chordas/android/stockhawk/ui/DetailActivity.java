@@ -27,7 +27,7 @@ import java.util.ArrayList;
  * @version 1.0
  * @date 5/4/2016
  */
-public class DetailActivity extends AppCompatActivity{
+public class DetailActivity extends AppCompatActivity {
     public static final String TAG = DetailActivity.class.getSimpleName();
     private View errorMessage;
     private View progressCircle;
@@ -38,6 +38,7 @@ public class DetailActivity extends AppCompatActivity{
     private String companyName;
     private ArrayList<String> labels;
     private ArrayList<Float> values;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class DetailActivity extends AppCompatActivity{
             downloadStockDetails();
         }
     }
+
     // Save/Restore activity state
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -66,10 +68,11 @@ public class DetailActivity extends AppCompatActivity{
             outState.putFloatArray("values", valuesArray);
         }
     }
+
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         if (savedInstanceState != null && savedInstanceState.containsKey("company_name")) {
-           isLoaded = true;
+            isLoaded = true;
             companyName = savedInstanceState.getString("company_name");
             labels = savedInstanceState.getStringArrayList("labels");
             values = new ArrayList<>();
@@ -82,6 +85,7 @@ public class DetailActivity extends AppCompatActivity{
         }
         super.onRestoreInstanceState(savedInstanceState);
     }
+
     // Home button click
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -144,6 +148,7 @@ public class DetailActivity extends AppCompatActivity{
             }
         });
     }
+
     private void onDownloadCompleted() {
         DetailActivity.this.runOnUiThread(new Runnable() {
             @Override
@@ -159,16 +164,17 @@ public class DetailActivity extends AppCompatActivity{
                     series.addPoint(new ValueLinePoint(labels.get(i), values.get(i)));
                 }
                 if (!isLoaded) {
-                                        lineChart.startAnimation();
-                                    }
+                    lineChart.startAnimation();
+                }
                 lineChart.addSeries(series);
                 lineChart.setVisibility(View.VISIBLE);
                 lineChart.startAnimation();
 
-                isLoaded=true;
+                isLoaded = true;
             }
         });
     }
+
     private void onDownloadFailed() {
         DetailActivity.this.runOnUiThread(new Runnable() {
             @Override

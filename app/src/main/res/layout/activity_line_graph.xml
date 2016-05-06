@@ -8,33 +8,34 @@
         android:id="@+id/line_chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:egUseCubic="true"
-        app:egUseOverlapFill="true"
+        android:visibility="gone"
         app:egIndicatorLineColor="#FE6DA8"
         app:egIndicatorTextColor="@android:color/white"
         app:egLegendHeight="40dp"
-        android:visibility="gone"/>
+        app:egUseCubic="true"
+        app:egUseOverlapFill="true" />
 
-    <TextView android:id="@+id/error_message"
+    <TextView
+        android:id="@+id/error_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_gravity="center"
         android:gravity="center"
         android:text="@string/loading_failed"
         android:textSize="18sp"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
         android:id="@+id/progress_circle"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
-        app:mlpb_progress_stoke_width="4dp"
-        app:mlpb_show_arrow="false"
         app:mlpb_enable_circle_background="false"
         app:mlpb_progress_color="@color/material_blue_700"
-        app:mlpb_progress_text_visibility="invisible" />
+        app:mlpb_progress_stoke_width="4dp"
+        app:mlpb_progress_text_visibility="invisible"
+        app:mlpb_show_arrow="false" />
 
 </FrameLayout>
